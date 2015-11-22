@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<title>rCalculator</title>
+	<meta name="viewport" content="width=device-width" >
+	<meta name="description" content="Savings Calculator">
+
+	<link rel="stylesheet" href="css/index.css">
+  <link type="text/css" rel="stylesheet" href="bower_components/pure/base-min.css"></link> 
+    <link type="text/css" rel="stylesheet" href="bower_components/pure/forms.css"></link> 
+        <link type="text/css" rel="stylesheet" href="bower_components/pure/buttons-core.css"></link> 
+             <link type="text/css" rel="stylesheet" href="bower_components/pure/grids.css"></link> 
+</head>
+<body>
+
+	<div style="width:50%; margin:auto;">
+		<h1 style="text-align:center; font:sans-serif 5em;">rCalculator</h1>
+
+    <form action="#">
+      <label for="savingRate">Monthly saving</label>
+      <input type="text" name="savingRate" class="savingRate">
+      <label for="monthlyNeed">Needed per month</label>
+      <input type="text" name="monthlyNeed" class="monthlyNeed">
+      <input type="submit" class="button btn submit" >
+
+    </form>
+
+	</div>
+
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+  <script>
+
+
+$(function() {
+  
+
+    $( "form" ).submit(function( event ) {
+
+
+var sr = $( ".savingRate" ).val();
+var mn = $( ".monthlyNeed" ).val();
+var interest = 25
+
+var totalneed = mn *  interest * 12;
+
+var duration = totalneed / sr;
+
+
+console.log(totalneed + "totally needed and accumulated in " + duration + "months");
+
+  event.preventDefault();
+
+
+});
+
+
+
+
+
+
+});
+
+
+
+  </script>
+</body>
+</html>
